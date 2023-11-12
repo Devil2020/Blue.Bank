@@ -21,6 +21,75 @@ val interFontFamily = FontFamily(
     Font(R.font.inter_thin, weight = FontWeight.Thin),
 )
 
+object AppTextStyle {
+    val headingsHeading32px = TextStyle(
+        fontSize = FontSize._32SP,
+        fontWeight = FontWeight.W600,
+        lineHeight = 44.sp,
+        fontFamily = interFontFamily
+    )
+    val headingsHeading24px = TextStyle(
+        fontSize = FontSize._24SP,
+        fontWeight = FontWeight.W600,
+        lineHeight = 33.sp,
+        fontFamily = interFontFamily
+    )
+    val headingsHeading20px = TextStyle(
+        fontSize = FontSize._20SP,
+        fontWeight = FontWeight.W600,
+        fontFamily = interFontFamily
+    )
+    val headingsHeading18px = TextStyle(
+        fontSize = FontSize._12SP,
+        fontWeight = FontWeight.W600,
+        lineHeight = 25.sp,
+        fontFamily = interFontFamily
+    )
+    val bodyBodyText16pxW400 = TextStyle(
+        fontSize = FontSize._16SP,
+        fontWeight = FontWeight.W400,
+        lineHeight = 22.sp,
+        letterSpacing = FontSize._0_15SP,
+        fontFamily = interFontFamily
+    )
+    val bodyBodyText16pxW600 = TextStyle(
+        fontSize = FontSize._16SP,
+        fontWeight = FontWeight.W600,
+        lineHeight = 22.sp,
+        letterSpacing = FontSize._0_15SP,
+        fontFamily = interFontFamily
+    )
+    val bodyBodyText14pxW400 = TextStyle(
+        fontSize = FontSize._14SP,
+        fontWeight = FontWeight.W400,
+        lineHeight = 19.sp,
+        letterSpacing = FontSize._0_1SP,
+        fontFamily = interFontFamily
+    )
+    val bodyBodyText14pxW600 = TextStyle(
+        fontSize =FontSize._14SP,
+        fontWeight = FontWeight.W600,
+        lineHeight = 19.sp,
+        letterSpacing = FontSize._0_1SP,
+        fontFamily = interFontFamily
+    )
+    val bodyBodyText12pxW400 = TextStyle(
+        fontSize = FontSize._12SP,
+        fontWeight = FontWeight.W400,
+        lineHeight = 16.sp,
+        letterSpacing = FontSize._0_5SP,
+        fontFamily = interFontFamily
+    )
+    val bodyBodyText12pxW600 = TextStyle(
+        fontSize =FontSize._12SP,
+        fontWeight = FontWeight.W600,
+        lineHeight = 16.sp,
+        letterSpacing = FontSize._0_5SP,
+        fontFamily = interFontFamily
+    )
+}
+
+
 val Typography = Typography(
 
     /*Headlines are best-suited for short, high-emphasis text on smaller screens.
@@ -31,27 +100,9 @@ val Typography = Typography(
     ---------------------> Headline style used for short text on a small screen , Dialog using a headline style
     */
 
-    headlineSmall = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.Normal,
-        fontSize = 14.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    headlineMedium = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.Medium,
-        fontSize = 16.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    headlineLarge = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 18.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
+    headlineSmall = AppTextStyle.headingsHeading20px,
+    headlineMedium = AppTextStyle.headingsHeading24px,
+    headlineLarge =  AppTextStyle.headingsHeading32px,
 
     /*Titles are smaller than headline styles, and should be used for medium-emphasis text that remains relatively short.
     For example, consider using title styles to divide secondary passages of text or secondary regions of content.
@@ -60,27 +111,9 @@ val Typography = Typography(
     ------------------> Top app bar using title style ,
     */
 
-    titleSmall = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.Normal,
-        fontSize = 14.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    titleMedium = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.Medium,
-        fontSize = 16.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    titleLarge = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 18.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
+    titleSmall = AppTextStyle.bodyBodyText12pxW400,
+    titleMedium = AppTextStyle.bodyBodyText14pxW400,
+    titleLarge = AppTextStyle.bodyBodyText16pxW400,
 
     /*
     Body styles are used for longer passages of text in your app.
@@ -90,27 +123,9 @@ val Typography = Typography(
     ------------------> Body style used throughout an article about pesto , Example of body style used throughout a setup flow ( Button Layout )
     */
 
-    bodySmall = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.Normal,
-        fontSize = 12.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    ),
-    bodyMedium = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.Medium,
-        fontSize = 14.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    ),
-    bodyLarge = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    ),
+    bodySmall = AppTextStyle.bodyBodyText12pxW600,
+    bodyMedium = AppTextStyle.bodyBodyText14pxW600,
+    bodyLarge = AppTextStyle.bodyBodyText16pxW600,
 
     /*Label styles are smaller, utilitarian styles, used for things like the text inside components or
      for very small text in the content body, such as captions. Buttons, for example, use the label large style.
@@ -118,27 +133,9 @@ val Typography = Typography(
      ----------------------> A navigation bar using label style for the destination text
      */
 
-    labelSmall = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.Normal,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
-    ),
-    labelMedium = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.Medium,
-        fontSize = 14.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    labelLarge = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 14.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
+    labelSmall = AppTextStyle.bodyBodyText12pxW400,
+    labelMedium = AppTextStyle.bodyBodyText14pxW400,
+    labelLarge = AppTextStyle.bodyBodyText16pxW400,
 
     /*There are three display styles in the default type scale: Large, medium, and small.
      As the largest text on the screen, display styles are reserved for short, important text or numerals.
@@ -148,25 +145,7 @@ val Typography = Typography(
 
      ------------> A card using a display size , An expressive typeface can entice readers to engage with an eye-catching design
      */
-    displaySmall = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.Normal,
-        fontSize = 14.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    displayMedium = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.Medium,
-        fontSize = 14.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    ),
-    displayLarge = TextStyle(
-        fontFamily = interFontFamily,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 14.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
-    )
+    displaySmall = AppTextStyle.bodyBodyText12pxW600,
+    displayMedium = AppTextStyle.bodyBodyText14pxW600,
+    displayLarge = AppTextStyle.bodyBodyText16pxW600
 )

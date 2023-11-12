@@ -40,7 +40,7 @@ fun SplashScreen(
         Text(
             text = stringResource(id = R.string.app_name),
             color = Color.White,
-
+            style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier.constrainAs(name) {
                 bottom.linkTo(parent.bottom, 10.dp)
                 linkTo(parent.start, parent.end)
