@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.expertapps.bluebank.R
+import com.expertapps.bluebank.ui.theme.AppColors
 
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
@@ -25,7 +26,7 @@ fun SplashScreen(
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
+            .background(AppColors.Blue0055F9)
             .then(modifier)
     ) {
         val (logo, name) = createRefs()
