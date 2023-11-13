@@ -4,4 +4,8 @@
     <string name="get_started_title">Get $50 when you open an account</string>
     <string name="get_started_body">Enjoy the benefits of online banking by becoming a customer. Let’s help you find the right account.</string>
     <string name="get_started">Get started</string>
+    <string name="customer_id">Customer ID</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forgot password?</string>
+    <string name="create_account">Create account</string>
 </resources>

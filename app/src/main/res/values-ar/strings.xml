@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">بلوبانك</string>
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="get_started_title">احصل على 50 دولار عند فتح حساب</string>
+    <string name="get_started_body">استمتع بفوائد الخدمات المصرفية عبر الإنترنت من خلال أن تصبح عميلًا. دعنا نساعدك في العثور على الحساب المناسب.</string>
+    <string name="get_started">ابدأ الآن</string>
+    <string name="customer_id">Customer id</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forgot password?</string>
+    <string name="create_account">Create account</string>
+</resources>

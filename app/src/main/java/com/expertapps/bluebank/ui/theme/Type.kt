@@ -24,24 +24,24 @@ val interFontFamily = FontFamily(
 object AppTextStyle {
     val headingsHeading32px = TextStyle(
         fontSize = FontSize._32SP,
-        fontWeight = FontWeight.W600,
+        fontWeight = FontWeight.Bold,
         lineHeight = 44.sp,
         fontFamily = interFontFamily
     )
     val headingsHeading24px = TextStyle(
         fontSize = FontSize._24SP,
-        fontWeight = FontWeight.W600,
+        fontWeight = FontWeight.Bold,
         lineHeight = 33.sp,
         fontFamily = interFontFamily
     )
     val headingsHeading20px = TextStyle(
         fontSize = FontSize._20SP,
-        fontWeight = FontWeight.W600,
+        fontWeight = FontWeight.Bold,
         fontFamily = interFontFamily
     )
     val headingsHeading18px = TextStyle(
         fontSize = FontSize._12SP,
-        fontWeight = FontWeight.W600,
+        fontWeight = FontWeight.Bold,
         lineHeight = 25.sp,
         fontFamily = interFontFamily
     )
@@ -52,9 +52,9 @@ object AppTextStyle {
         letterSpacing = FontSize._0_15SP,
         fontFamily = interFontFamily
     )
-    val bodyBodyText16pxW600 = TextStyle(
+    val bodyBodyText16pxBold = TextStyle(
         fontSize = FontSize._16SP,
-        fontWeight = FontWeight.W600,
+        fontWeight = FontWeight.Bold,
         lineHeight = 22.sp,
         letterSpacing = FontSize._0_15SP,
         fontFamily = interFontFamily
@@ -66,9 +66,9 @@ object AppTextStyle {
         letterSpacing = FontSize._0_1SP,
         fontFamily = interFontFamily
     )
-    val bodyBodyText14pxW600 = TextStyle(
+    val bodyBodyText14pxBold = TextStyle(
         fontSize =FontSize._14SP,
-        fontWeight = FontWeight.W600,
+        fontWeight = FontWeight.Bold,
         lineHeight = 19.sp,
         letterSpacing = FontSize._0_1SP,
         fontFamily = interFontFamily
@@ -80,9 +80,9 @@ object AppTextStyle {
         letterSpacing = FontSize._0_5SP,
         fontFamily = interFontFamily
     )
-    val bodyBodyText12pxW600 = TextStyle(
+    val bodyBodyText12pxBold = TextStyle(
         fontSize =FontSize._12SP,
-        fontWeight = FontWeight.W600,
+        fontWeight = FontWeight.Bold,
         lineHeight = 16.sp,
         letterSpacing = FontSize._0_5SP,
         fontFamily = interFontFamily
@@ -123,9 +123,9 @@ val Typography = Typography(
     ------------------> Body style used throughout an article about pesto , Example of body style used throughout a setup flow ( Button Layout )
     */
 
-    bodySmall = AppTextStyle.bodyBodyText12pxW600,
-    bodyMedium = AppTextStyle.bodyBodyText14pxW600,
-    bodyLarge = AppTextStyle.bodyBodyText16pxW600,
+    bodySmall = AppTextStyle.bodyBodyText12pxBold,
+    bodyMedium = AppTextStyle.bodyBodyText14pxBold,
+    bodyLarge = AppTextStyle.bodyBodyText16pxBold,
 
     /*Label styles are smaller, utilitarian styles, used for things like the text inside components or
      for very small text in the content body, such as captions. Buttons, for example, use the label large style.
@@ -145,7 +145,7 @@ val Typography = Typography(
 
      ------------> A card using a display size , An expressive typeface can entice readers to engage with an eye-catching design
      */
-    displaySmall = AppTextStyle.bodyBodyText12pxW600,
-    displayMedium = AppTextStyle.bodyBodyText14pxW600,
-    displayLarge = AppTextStyle.bodyBodyText16pxW600
+    displaySmall = AppTextStyle.bodyBodyText12pxBold,
+    displayMedium = AppTextStyle.bodyBodyText14pxBold,
+    displayLarge = AppTextStyle.bodyBodyText16pxBold
 )
