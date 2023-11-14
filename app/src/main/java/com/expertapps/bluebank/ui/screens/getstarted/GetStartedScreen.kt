@@ -1,6 +1,7 @@
 package com.expertapps.bluebank.ui.screens.getstarted
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -35,6 +36,7 @@ fun GetStartedScreen(modifier: Modifier = Modifier) {
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
+            .background(Color.White)
             .then(modifier)
     ) {
 

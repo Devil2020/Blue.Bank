@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -17,12 +18,18 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.expertapps.bluebank.R
 import com.expertapps.bluebank.ui.theme.AppColors
+import kotlinx.coroutines.delay
 
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun SplashScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier ,
+    navigate : () -> Unit = {}
 ) {
+    LaunchedEffect(key1 = true){
+        delay(1000)
+        navigate.invoke()
+    }
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
