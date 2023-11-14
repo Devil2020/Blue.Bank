@@ -7,12 +7,14 @@ object ApplicationStartRoutes {
     object LoginRoute : Route(LoginRoute::class.java.name)
 }
 
-object OnBoardingRoutes {
-    object ChooseBankAccountRoute : Route(ChooseBankAccountRoute::class.java.name)
-    object ChooseAgeRoute : Route(ChooseAgeRoute::class.java.name)
-    object ChooseAccountTypeRoute : Route(ChooseAccountTypeRoute::class.java.name)
-    object ChooseSavingTypesRoute : Route(ChooseSavingTypesRoute::class.java.name)
-    object RecommendationAccountsRoute : Route(RecommendationAccountsRoute::class.java.name)
+object OnBoardingRoute : Route(OnBoardingRoute::class.java.name) {
+    enum class Steps(selectionCount : Int) {
+         ChooseBankAccountPage(1) ,
+         ChooseAgePage(2) ,
+         ChooseAccountTypePage (3) ,
+         ChooseSavingTypesPage (4) ,
+         RecommendationAccountsPage (5)
+    }
 }
 
 object PersonalDetailsRoutes {

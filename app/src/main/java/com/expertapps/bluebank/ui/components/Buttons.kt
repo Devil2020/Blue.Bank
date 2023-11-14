@@ -14,8 +14,8 @@ import androidx.compose.ui.unit.dp
 import com.expertapps.bluebank.ui.theme.AppColors
 
 @Composable
-fun FilledButton (modifier : Modifier = Modifier , name : String){
-    Button(onClick = { /*TODO*/ },
+fun FilledButton (modifier : Modifier = Modifier , name : String , onClick : () ->Unit = {}){
+    Button(onClick = onClick,
         shape = RoundedCornerShape(30.dp),
         modifier = modifier,
         colors = ButtonDefaults.buttonColors(containerColor = AppColors.Blue0055F9)
@@ -28,8 +28,8 @@ fun FilledButton (modifier : Modifier = Modifier , name : String){
 
 
 @Composable
-fun BorderButton (modifier : Modifier = Modifier , name : String){
-    Button(onClick = { /*TODO*/ },
+fun BorderButton (modifier : Modifier = Modifier , name : String, onClick : () ->Unit = {}){
+    Button(onClick = onClick,
         shape = RoundedCornerShape(30.dp),
         modifier = Modifier
             .border(width = 1.dp, color = AppColors.Blue99BBFD, shape = RoundedCornerShape(size = 30.dp))

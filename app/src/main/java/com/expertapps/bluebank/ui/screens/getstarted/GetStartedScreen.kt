@@ -2,6 +2,7 @@ package com.expertapps.bluebank.ui.screens.getstarted
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -32,7 +33,7 @@ import kotlin.math.log
 
 @Preview(showSystemUi = true, showBackground = true, device = Devices.PHONE)
 @Composable
-fun GetStartedScreen(modifier: Modifier = Modifier) {
+fun GetStartedScreen(modifier: Modifier = Modifier , loginClick : () -> Unit = {}, startClick : () -> Unit = {}) {
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
@@ -55,7 +56,7 @@ fun GetStartedScreen(modifier: Modifier = Modifier) {
             text = stringResource(id = R.string.sign_in), modifier = Modifier.constrainAs(signIn) {
                 linkTo(logo.top, logo.bottom)
                 end.linkTo(parent.end, 10.dp)
-            }, style = MaterialTheme.typography.bodyLarge, color = AppColors.Blue0055F9
+            }.clickable { loginClick.invoke() }, style = MaterialTheme.typography.bodyLarge, color = AppColors.Blue0055F9
         )
 
 
@@ -103,7 +104,7 @@ fun GetStartedScreen(modifier: Modifier = Modifier) {
                     linkTo(body.bottom, parent.bottom, bias = 0.9f)
                     linkTo(logo.start, signIn.end)
                     width = Dimension.fillToConstraints
-                })
+                } , onClick = startClick)
 
     }
 

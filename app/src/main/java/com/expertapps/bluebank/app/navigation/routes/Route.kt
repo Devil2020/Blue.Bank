@@ -8,6 +8,12 @@ open class Route (val name : String) {
     fun navigate () = navigate(name)
 
     context(NavController)
-    fun pop() = popBackStack()
+    fun navigateAndPopCurrent () {
+        pop()
+        navigate()
+    }
+
+    context(NavController)
+    private fun pop() = popBackStack()
 
 }
