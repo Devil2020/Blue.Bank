@@ -62,14 +62,14 @@ fun StepItem(isSelected: Boolean) {
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun OnBoardingActionBar(modifier: Modifier = Modifier) {
+fun OnBoardingActionBar(modifier: Modifier = Modifier, currentStepValue: Int = 1) {
     Row(
         verticalAlignment = Alignment.CenterVertically, modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 10.dp)
             .then(modifier)
     ) {
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick = { }) {
             Icon(
                 painter = painterResource(id = R.drawable.back),
                 contentDescription = "Back",
@@ -77,37 +77,40 @@ fun OnBoardingActionBar(modifier: Modifier = Modifier) {
             )
         }
         Spacer(modifier = Modifier.width(50.dp))
-        StepItem(true)
+        StepItem(currentStepValue >= 0)
         Spacer(modifier = Modifier.width(10.dp))
-        StepItem(false)
+        StepItem(currentStepValue >= 1)
         Spacer(modifier = Modifier.width(10.dp))
-        StepItem(false)
+        StepItem(currentStepValue >= 2)
         Spacer(modifier = Modifier.width(10.dp))
-        StepItem(false)
+        StepItem(currentStepValue >= 3)
         Spacer(modifier = Modifier.width(10.dp))
-        StepItem(false)
+        StepItem(currentStepValue >= 4)
     }
 }
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun OnBoardingScreen(
-    modifier: Modifier = Modifier.background(Color.White),
-    steps: ArrayList<OnBoardingRoute.Steps> = getSteps()
+    modifier: Modifier = Modifier,
+    steps: ArrayList<OnBoardingRoute.Steps> = getSteps(),
+    currentStepValue: Int = 0
 ) {
 
-    var currentStep by remember {
-        mutableStateOf(steps[4])
+    val currentStep by remember {
+        mutableStateOf(steps[currentStepValue])
     }
 
-    ConstraintLayout(modifier = Modifier.then(modifier)) {
+    ConstraintLayout(modifier = Modifier
+        .background(Color.White)
+        .fillMaxSize()
+        .then(modifier)) {
         val (continueBtn, actionBar, content) = createRefs()
-
         OnBoardingActionBar(modifier = Modifier.constrainAs(actionBar) {
             top.linkTo(parent.top)
             linkTo(parent.start, parent.end)
             width = Dimension.fillToConstraints
-        })
+        } , currentStepValue = currentStepValue)
 
         OnBoardingContent(modifier = Modifier.constrainAs(content) {
             linkTo(actionBar.bottom, continueBtn.top)
@@ -243,11 +246,11 @@ fun RecommendedAccountOptionsContainer(modifier: Modifier) {
         Row(
             modifier = Modifier
                 .background(AppColors.BlueE6EEFE, shape = RoundedCornerShape(40.dp))
-                .padding(horizontal = 15.dp , vertical = 10.dp)
+                .padding(horizontal = 15.dp, vertical = 10.dp)
                 .height(30.dp)
-                .constrainAs(chip){
+                .constrainAs(chip) {
                     top.linkTo(parent.top)
-                    end.linkTo(parent.end , 10.dp)
+                    end.linkTo(parent.end, 10.dp)
                 }
         ) {
             Text(
