@@ -7,9 +7,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.lifecycleScope
 import com.expertapps.bluebank.app.navigation.navhosts.main.BlueBankNavigation
 import com.expertapps.bluebank.ui.screens.splash.SplashScreen
 import com.expertapps.bluebank.ui.theme.BlueBankTheme
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.expertapps.bluebank.ui.theme.AppColors
 
@@ -39,6 +40,7 @@ fun BorderButton (modifier : Modifier = Modifier , name : String, onClick : () -
         Text(text = name ,
             style = MaterialTheme.typography.bodyLarge ,
             modifier = Modifier.padding(vertical = 10.dp) ,
+            fontWeight = FontWeight.SemiBold,
             color = AppColors.Blue0055F9)
     }
 }

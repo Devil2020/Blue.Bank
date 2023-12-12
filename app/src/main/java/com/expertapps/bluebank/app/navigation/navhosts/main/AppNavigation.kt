@@ -7,9 +7,11 @@ import androidx.navigation.compose.rememberNavController
 import com.expertapps.bluebank.app.navigation.directions.BlueBankDirections
 import com.expertapps.bluebank.app.navigation.routes.ApplicationStartRoutes
 import com.expertapps.bluebank.app.navigation.routes.OnBoardingRoute
+import com.expertapps.bluebank.app.navigation.routes.PersonalDetailsRoutes
 import com.expertapps.bluebank.ui.screens.getstarted.GetStartedScreen
 import com.expertapps.bluebank.ui.screens.login.LoginScreen
 import com.expertapps.bluebank.ui.screens.onboarding.OnBoardingScreen
+import com.expertapps.bluebank.ui.screens.personaldetails.PersonalDetailScreen
 import com.expertapps.bluebank.ui.screens.splash.SplashScreen
 
 @Composable
@@ -36,6 +38,9 @@ fun BlueBankNavigation() {
         }
         composable(OnBoardingRoute.name) {
             OnBoardingScreen()
+        }
+        composable(PersonalDetailsRoutes.name) {
+            PersonalDetailScreen()
         }
     }
 }

@@ -20,18 +20,35 @@ object OnBoardingRoute : Route(OnBoardingRoute::class.java.name) {
         lateinit var subTitle: String
         lateinit var question: String
 
-        data class ChooseBankAccountPage(val options: List<Option> , var selectedOption : State<Option?> = mutableStateOf(null)) : Steps()
-        data class ChooseAgePage(val options: List<Option>, var selectedOption : State<Option?> = mutableStateOf(null)) : Steps()
-        data class ChooseAccountTypePage(val options: List<Option>, var selectedOption : State<Option?> = mutableStateOf(null)) : Steps()
-        data class ChooseSavingTypesPage(val options: List<Option>, var selectedOption : State<Option?> = mutableStateOf(null)) : Steps()
+        data class ChooseBankAccountPage(
+            val options: List<Option>,
+            var selectedOption: State<Option?> = mutableStateOf(null)
+        ) : Steps()
+
+        data class ChooseAgePage(
+            val options: List<Option>,
+            var selectedOption: State<Option?> = mutableStateOf(null)
+        ) : Steps()
+
+        data class ChooseAccountTypePage(
+            val options: List<Option>,
+            var selectedOption: State<Option?> = mutableStateOf(null)
+        ) : Steps()
+
+        data class ChooseSavingTypesPage(
+            val options: List<Option>,
+            var selectedOption: State<Option?> = mutableStateOf(null)
+        ) : Steps()
+
         object RecommendationAccountsPage : Steps()
     }
 
-    @Composable fun getSteps() = arrayListOf(
-        createChooseBankAccountPage() ,
-        createChooseYourAgePage() ,
-        createChooseAccountTypePage() ,
-        createSavingTypesPage() ,
+    @Composable
+    fun getSteps() = arrayListOf(
+        createChooseBankAccountPage(),
+        createChooseYourAgePage(),
+        createChooseAccountTypePage(),
+        createSavingTypesPage(),
         createRecommendAccountsPage()
     )
 
@@ -99,6 +116,7 @@ object OnBoardingRoute : Route(OnBoardingRoute::class.java.name) {
         subTitle = stringResource(id = R.string.choose_saving_types_subtitle)
         question = stringResource(id = R.string.choose_saving_types_question)
     }
+
     @Composable
     private fun createRecommendAccountsPage() = Steps.RecommendationAccountsPage.apply {
         title = stringResource(id = R.string.choose_recommended_account_title)
@@ -108,10 +126,12 @@ object OnBoardingRoute : Route(OnBoardingRoute::class.java.name) {
 
 }
 
-object PersonalDetailsRoutes {
-    object YourDetailsRoute : Route(YourDetailsRoute::class.java.name)
-    object VerifyPhoneNumberRoute : Route(VerifyPhoneNumberRoute::class.java.name)
-    object SetPasswordRoute : Route(SetPasswordRoute::class.java.name)
+object PersonalDetailsRoutes : Route(PersonalDetailsRoutes::class.java.name) {
+    enum class Steps {
+        YourDetailsRoute,
+        VerifyPhoneNumberRoute,
+        SetPasswordRoute
+    }
 }
 
 object VerifyIdentityRoutes {
